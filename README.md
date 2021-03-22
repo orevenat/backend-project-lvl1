@@ -3,4 +3,4 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/a6accea7052a814fbbb8/maintainability)](https://codeclimate.com/github/izhiltsov/backend-project-lvl1/maintainability)
 
-![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+![example workflow](https://github.com/izhiltsov/backend-project-lvl1/actions/workflows/node-check/badge.svg)
