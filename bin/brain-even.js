@@ -1,5 +1,8 @@
 #!/usr/bin/env node
+
+import { greetUser, goodbyeUser } from '../src/index.js';
 import evenGame from '../src/even-game.js';
 
-console.log('Welcome to the Brain Games!');
-console.log(evenGame());
+const name = greetUser();
+const result = evenGame();
+console.log(goodbyeUser(result, name));
