@@ -30,7 +30,4 @@ const calcGame = () => {
   return result;
 };
 
-// const isEven = (number) => number % 2 === 0;
-// const correctAnswer = (isEven(number)) ? 'yes' : 'no'
-
 export default calcGame;
