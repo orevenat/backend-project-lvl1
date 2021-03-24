@@ -11,7 +11,7 @@ const calcGame = () => {
     const num1 = getRandomInt(gameLevel);
     const num2 = getRandomInt(gameLevel);
     const operands = ['*', '+', '*'];
-    const index = getRandomInt(3);
+    const index = getRandomInt(operands.length);
     const operand = operands[index];
     const expression = `${num1} ${operand} ${num2}`;
     if (operand === '*') {
