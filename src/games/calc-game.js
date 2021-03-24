@@ -1,4 +1,4 @@
-import { gamePlay, getRandomInt } from './index.js';
+import { gamePlay, getRandomInt } from '../index.js';
 
 const calcGame = () => {
   const gameDataObj = {
