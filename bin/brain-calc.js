@@ -1,8 +1,5 @@
 #!/usr/bin/env node
 
-import { greetUser, goodbyeUser } from '../src/index.js';
-import calcGame from '../src/games/calc-game.js';
+import runCalcGame from '../src/games/calc.js';
 
-const name = greetUser();
-const result = calcGame();
-console.log(goodbyeUser(result, name));
+runCalcGame();

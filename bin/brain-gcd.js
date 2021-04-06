@@ -1,8 +1,5 @@
 #!/usr/bin/env node
 
-import { greetUser, goodbyeUser } from '../src/index.js';
-import gcdGame from '../src/games/gcd-game.js';
+import runGcdGame from '../src/games/gcd.js';
 
-const name = greetUser();
-const result = gcdGame();
-console.log(goodbyeUser(result, name));
+runGcdGame();

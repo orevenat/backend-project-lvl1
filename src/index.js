@@ -1,37 +1,26 @@
 import { getUserAnswer, getUserName } from './cli.js';
 
-const greetUser = () => {
+const gameEngine = (gameData, gameRule) => {
   console.log('Welcome to the Brain Games!');
-  const name = getUserName();
-  console.log(`Hello, ${name}`);
-  return name;
-};
+  const userName = getUserName();
+  console.log(`Hello, ${userName}`);
+  console.log(gameRule);
 
-const goodbyeUser = (result, name) => {
-  const congrats = `Congratulations, ${name}!`;
-  const tryagain = `Let's try again, ${name}!`;
-  return result ? congrats : tryagain;
-};
-
-const getRandomInt = (max = 100) => Math.floor(Math.random() * Math.floor(max));
-
-const gamePlay = (gameDataObj) => {
-  console.log(gameDataObj.gameQuestion);
   for (let i = 0; i < 3; i += 1) {
-    const question = gameDataObj[i][0];
+    const [question, correctAnswer] = gameData();
     console.log(`Question: ${question}`);
     const userAnswer = getUserAnswer();
-    const correctAnswer = gameDataObj[i][1];
-    if (correctAnswer === userAnswer) {
+
+    if (userAnswer === correctAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
-      return false;
+      console.log(`'${userAnswer}' is a wrong answer ;(. Correct answer is '${correctAnswer}'.`);
+      console.log(`Let's try again, ${userName}!`);
+      return;
     }
   }
-  return true;
+
+  console.log(`Congratulations, ${userName}!`);
 };
 
-export {
-  greetUser, gamePlay, goodbyeUser, getRandomInt,
-};
+export default gameEngine;
