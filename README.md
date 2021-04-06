@@ -12,7 +12,7 @@
 ## Setup
 
 ```
-$ npm install -g https://github.com/stcrd/backend-project-lvl1.git
+$ npm install -g https://github.com/izhiltsov/backend-project-lvl1.git
 ```
 
 ## Run
