@@ -6,7 +6,7 @@ const isEven = (number) => number % 2 === 0;
 
 const gameData = () => {
   const randomNumber = getRandomInt();
-  const question = randomNumber.toString();
+  const question = String(randomNumber);
   const answer = isEven(randomNumber) ? 'yes' : 'no';
   return [question, answer];
 };

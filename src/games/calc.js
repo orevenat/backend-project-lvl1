@@ -1,39 +1,29 @@
-import gamePlay from '../index.js';
+import gameEngine from '../index.js';
 import getRandomInt from '../utils.js';
 
-const gameQuestion = 'What is the result of the expression?';
+const gameRule = 'What is the result of the expression?';
 
+const gameData = () => {
+  const maxRandomNumber = 10;
+  const num1 = getRandomInt(maxRandomNumber);
+  const num2 = getRandomInt(maxRandomNumber);
+  const operands = ['*', '+', '*'];
+  const index = getRandomInt(operands.length);
+  const operand = operands[index];
+  const question = `${num1} ${operand} ${num2}`;
+  let answer;
 
+  if (operand === '*') {
+    answer = String(num1 * num2);
+  }
+  if (operand === '+') {
+    answer = String(num1 + num2);
+  }
+  if (operand === '-') {
+    answer = String(num1 - num2);
+  }
 
+  return [question, answer];
+};
 
-// const calcGame = () => {
-//   const gameDataObj = {
-//     gameQuestion: 'What is the result of the expression?',
-//   };
-//   let correctAnswer;
-//   const gameLevel = 10;
-
-//   for (let i = 0; i < 3; i += 1) {
-//     const num1 = getRandomInt(gameLevel);
-//     const num2 = getRandomInt(gameLevel);
-//     const operands = ['*', '+', '*'];
-//     const index = getRandomInt(operands.length);
-//     const operand = operands[index];
-//     const expression = `${num1} ${operand} ${num2}`;
-//     if (operand === '*') {
-//       correctAnswer = String(num1 * num2);
-//     }
-//     if (operand === '+') {
-//       correctAnswer = String(num1 + num2);
-//     }
-//     if (operand === '-') {
-//       correctAnswer = String(num1 - num2);
-//     }
-//     gameDataObj[i] = [expression, correctAnswer];
-//   }
-
-//   const result = gamePlay(gameDataObj);
-//   return result;
-// };
-
-// export default calcGame;
+export default () => gameEngine(gameData, gameRule);
