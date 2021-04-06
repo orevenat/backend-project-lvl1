@@ -8,8 +8,8 @@ const gameData = () => {
   const num1 = getRandomInt(maxRandomNumber);
   const num2 = getRandomInt(maxRandomNumber);
   const operands = ['*', '+', '*'];
-  const index = getRandomInt(operands.length);
-  const operand = operands[index];
+  const randomIndex = getRandomInt(operands.length);
+  const operand = operands[randomIndex];
   const question = `${num1} ${operand} ${num2}`;
   let answer;
 
