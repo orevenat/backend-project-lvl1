@@ -13,14 +13,18 @@ const gameData = () => {
   const question = `${num1} ${operand} ${num2}`;
   let answer;
 
-  if (operand === '*') {
-    answer = String(num1 * num2);
-  }
-  if (operand === '+') {
-    answer = String(num1 + num2);
-  }
-  if (operand === '-') {
-    answer = String(num1 - num2);
+  switch (operand) {
+    case '*':
+      answer = String(num1 * num2);
+      break;
+    case '+':
+      answer = String(num1 + num2);
+      break;
+    case '-':
+      answer = String(num1 - num2);
+      break;
+    default:
+      console.log('Somthing went wrong <:>');
   }
 
   return [question, answer];
