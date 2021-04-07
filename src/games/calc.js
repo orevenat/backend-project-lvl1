@@ -8,7 +8,8 @@ const calculator = (num1, num2, operand) => {
     case '*': return num1 * num2;
     case '+': return num1 + num2;
     case '-': return num1 - num2;
-    default: return 'Somthing went wrong <:>';
+    default:
+      throw new Error(`Unknown operand state: '${operand}'!`);
   }
 };
 
