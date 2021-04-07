@@ -3,6 +3,15 @@ import getRandomInt from '../utils.js';
 
 const gameRule = 'What is the result of the expression?';
 
+const calculator = (num1, num2, operand) => {
+  switch (operand) {
+    case '*': return num1 * num2;
+    case '+': return num1 + num2;
+    case '-': return num1 - num2;
+    default: return 'Somthing went wrong <:>';
+  }
+};
+
 const gameData = () => {
   const maxRandomNumber = 10;
   const num1 = getRandomInt(maxRandomNumber);
@@ -11,21 +20,7 @@ const gameData = () => {
   const randomIndex = getRandomInt(operands.length);
   const operand = operands[randomIndex];
   const question = `${num1} ${operand} ${num2}`;
-  let answer;
-
-  switch (operand) {
-    case '*':
-      answer = String(num1 * num2);
-      break;
-    case '+':
-      answer = String(num1 + num2);
-      break;
-    case '-':
-      answer = String(num1 - num2);
-      break;
-    default:
-      console.log('Somthing went wrong <:>');
-  }
+  const answer = String(calculator(num1, num2, operand));
 
   return [question, answer];
 };
